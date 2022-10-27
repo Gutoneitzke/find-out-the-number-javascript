@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Jogo GN</title>
 </head>
 <body>
-    <h1>Descobrir o número de 0 a 100</h1>
-    <input type="number" placeholder="Digite um número" id="aposta">
-    <button onclick="verificaNumero()">Enviar<button>
+    <div class="content">
+        <h1>Descobrir o número de 0 a 100</h1>
+        <input type="number" placeholder="Digite um número" id="aposta">
+        <button onclick="verificaNumero()">Enviar</button>
+    </div>
 </body>
 <script>
 
     var numeroParaEncontrar = parseInt(Math.random() * 100);
     var tentativas = 0;
-    console.log(numeroParaEncontrar);
+    console.log('The number to find: '+numeroParaEncontrar);
 
     function verificaNumero(){
         var aposta = document.getElementById('aposta').value;
