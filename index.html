@@ -10,32 +10,51 @@
 <body>
     <div class="content">
         <h1>Descobrir o número de 0 a 100</h1>
-        <input type="number" placeholder="Digite um número" id="aposta">
-        <button onclick="verificaNumero()">Enviar</button>
+        <input type="number" placeholder="Digite um número" id="bet">
+        <button onclick="verifyNumber()">Enviar</button>
     </div>
 </body>
 <script>
 
-    var numeroParaEncontrar = parseInt(Math.random() * 100);
-    var tentativas = 0;
-    console.log('The number to find: '+numeroParaEncontrar);
+    var numberToFind = 0;
+    var attempts = 0;
 
-    function verificaNumero(){
-        var aposta = document.getElementById('aposta').value;
+    function refresh(){
+        var element = document.getElementById('bet');
+        element.value = '';
+        
+        numberToFind = parseInt(Math.random() * 100);
+        vattempts = 0;
 
-        if(aposta > numeroParaEncontrar)
+        console.log('The number to find: '+numberToFind);
+    }
+
+    refresh();
+
+    function verifyNumber(){
+        var element = document.getElementById('bet');
+        var bet = element.value;
+
+        if(bet > 100 || bet < 0)
         {
-            tentativas++;
-            alert('O número para ser encontrado é MENOR');
+            alert('Aposta é inválida');
+            return;
         }
-        else if(aposta < numeroParaEncontrar)
+
+        if(bet > numberToFind)
         {
-            tentativas++;
-            alert('O número para ser encontrado é MAIOR')
+            attempts++;
+            alert('🚨 O número para ser encontrado é MENOR');
+        }
+        else if(bet < numberToFind)
+        {
+            attempts++;
+            alert('🚨 O número para ser encontrado é MAIOR')
         }
         else
         {
-            alert('Parabéns você acertou!! Com '+tentativas+' erros!');
+            alert('✅ Parabéns você acertou!! Com '+attempts+' erros!');
+            refresh();
         }
     }
 
