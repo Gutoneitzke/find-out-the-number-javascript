@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo GN</title>
+</head>
+<body>
+    <h1>Descobrir o número de 0 a 100</h1>
+    <input type="number" placeholder="Digite um número" id="aposta">
+    <button onclick="verificaNumero()">Enviar<button>
+</body>
+<script>
+
+    var numeroParaEncontrar = parseInt(Math.random() * 100);
+    var tentativas = 0;
+    console.log(numeroParaEncontrar);
+
+    function verificaNumero(){
+        var aposta = document.getElementById('aposta').value;
+
+        if(aposta > numeroParaEncontrar)
+        {
+            tentativas++;
+            alert('O número para ser encontrado é MENOR');
+        }
+        else if(aposta < numeroParaEncontrar)
+        {
+            tentativas++;
+            alert('O número para ser encontrado é MAIOR')
+        }
+        else
+        {
+            alert('Parabéns você acertou!! Com '+tentativas+' erros!');
+        }
+    }
+
+</script>
+</html>
