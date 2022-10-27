@@ -1,2 +1,3 @@
-# find-out-the-number-javascript
-Find out the number with JavaScript
+# Find out the number with javascript
+- ✅ Shows the `amount of errors`
+- ✅ Show messages if number to find is larger or smaller
